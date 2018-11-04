@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SmartWeather } from '../pages/weather/weather';
+import { EmergencyLandingComponent } from './emergency-landing/emergency-landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SmartWeather,
+    EmergencyLandingComponent,
   ],
   imports: [
     BrowserModule,
