@@ -22,8 +22,8 @@ export class SmartWeather {
     constructor(private http: HttpClient) {}
 
     getWeatherInformation(lat, lon) {
+        const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&unit=imperial&appid=' + this.weatherKey;
 
-        let url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&unit=imperial&appid=' + this.weatherKey;
         this.result = this.http.get(url);
         this.result
         .subscribe(data => {
@@ -31,7 +31,7 @@ export class SmartWeather {
             this.windSpeed = data['wind']['speed'];
             this.windDegree = data['wind']['deg'];
             this.condition = data['weather'][0]['description'];
-            this.city = '';
+            this.city = data['main'];
             this.coordinates = lat + ', ' + lon;
         }, error => {
         console.log(error);
