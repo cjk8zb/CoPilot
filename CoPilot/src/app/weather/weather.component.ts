@@ -55,8 +55,8 @@ function parseThroughText(stream: string) {
       // @ts-ignore
       const weatherInformation = new WeatherComponent();
       weatherInformation.getWeatherInformation(39.58, -94.23);
-      speak('The current temperature is' + weatherInformation.temperature +
-        ', the wind speed is' + weatherInformation.windSpeed +
+      speak('The current temperature is' + weatherInformation.temperature.toString() +
+        ', the wind speed is' + weatherInformation.windSpeed.toString() +
         ', the weather conditions are' + weatherInformation.condition);
 
     }
