@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
+import * as airport from './airport.json';
+import * as airportFrequency from './airport-frequency.json';
 import  'rxjs/add/operator/catch';
 import  'rxjs/add/operator/map';
 
@@ -17,10 +19,11 @@ export class EmergencyLandingComponent implements OnInit {
   runwayDirection: string;
   coordinates: string;
   distance: number;
+  frequency: number;
 
   constructor(private http: HttpClient) {}
 
-    getWeatherInformation(lat, lon) {
+    getNearestAirport(lat, lon) {
         const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lon+'&radius=50000&type=airport&key='+this.googleKey;
 
         this.result = this.http.get(url);
@@ -33,6 +36,11 @@ export class EmergencyLandingComponent implements OnInit {
         }, error => {
           console.log(error);
         });
+    }
+
+    getAirportFrequency() {
+      let airportId = (<any>airport).airportId;
+      this.frequency = airportFrequency[airportId]['frequency'];
     }
 
   ngOnInit() {
