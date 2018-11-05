@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {EmergencyLandingComponent} from '../emergency-landing/emergency-landing.component';
 
 @Component({
   selector: 'app-weather',
@@ -60,9 +61,24 @@ function parseThroughText(stream: string) {
     }
     if ( x[i] = 'airport') {
       // @ts-ignore
-      const weatherInformation = new WeatherComponent();
+      const weatherInformation = new EmergencyLandingComponent();
       weatherInformation.getNearestAirport(39.58, -94.23);
       speak('The nearest airport is' + weatherInformation.airport);
+    }
+    if ( x[i] = 'emergency') {
+      // @ts-ignore
+      const weatherInformation = new EmergencyLandingComponent();
+      weatherInformation.getAirportFrequency();
+      speak('The nearest frequency is' + weatherInformation.frequency);
+    }
+    if ( x[i] = 'information') {
+      // @ts-ignore
+      const weatherInformation = new AirTrafficAwarenessComponent();
+      weatherInformation.getFlightInformation();
+      speak('Your current velocity is' + weatherInformation.velocity
+      + ', your current speed, heading and altitude is' + weatherInformation.velocity.toString()
+      + ',' + weatherInformation.heading.toString()
+      + ',' + weatherInformation.altitude.toString());
     } else {
       speak('Sorry, i did not understand your request, please rephrase the question?');
 
