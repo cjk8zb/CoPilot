@@ -80,7 +80,7 @@ function parseThroughText(stream: string) {
       + ',' + weatherInformation.heading.toString()
       + ',' + weatherInformation.altitude.toString());
     } else {
-      speak('Sorry, i did not understand your request, please rephrase the question');
+      speak('Sorry, i did not understand your request, please rephrase the question?');
 
     }
   }
