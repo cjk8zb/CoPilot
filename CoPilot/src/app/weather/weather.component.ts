@@ -39,8 +39,11 @@ export class WeatherComponent implements OnInit {
       });
   }
 
+  getTextToSpeak() {
+    return "It's " + this.temperature + " degrees with " + this.condition + ". Winds are " + this.windSpeed + " miles per hour heading " + this.windDegree;
+  }
+
   ngOnInit(): void {
     this.getWeatherInformation(39.58, -94.23);
   }
-
 }
