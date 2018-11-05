@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {EmergencyLandingComponent} from '../emergency-landing/emergency-landing.component';
 
 @Component({
   selector: 'app-weather',
@@ -62,15 +61,23 @@ function parseThroughText(stream: string) {
     }
     if ( x[i] = 'airport') {
       // @ts-ignore
-      const weatherInformation = new EmergencyLandingComponent();
+      const weatherInformation = new WeatherComponent();
       weatherInformation.getNearestAirport(39.58, -94.23);
       speak('The nearest airport is' + weatherInformation.airportName);
+    }
+    if ( x[i] = 'frequency') {
+      // @ts-ignore
+      const weatherInformation = new EmergencyLandingComponent();
+      weatherInformation.getAirportFrequency();
+      speak('The air traffic control frequency is' + weatherInformation.frequency.toString());
     }
     if ( x[i] = 'emergency') {
       // @ts-ignore
       const weatherInformation = new EmergencyLandingComponent();
-      weatherInformation.getAirportFrequency();
-      speak('The nearest frequency is' + weatherInformation.frequency.toString());
+      weatherInformation.getNearestAirport(39.58, -94.23);
+      speak('The nearest runway is' + weatherInformation.airportName
+      + ', it is' + weatherInformation.distance.toString() +
+      'miles away at coordinates' + weatherInformation.coordinates);
     }
     if ( x[i] = 'information') {
       // @ts-ignore
@@ -86,4 +93,7 @@ function parseThroughText(stream: string) {
     }
   }
 
+}
+
+function speak(words: string) {
 }
