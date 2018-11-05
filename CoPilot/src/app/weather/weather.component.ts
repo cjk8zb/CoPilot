@@ -63,19 +63,19 @@ function parseThroughText(stream: string) {
       // @ts-ignore
       const weatherInformation = new EmergencyLandingComponent();
       weatherInformation.getNearestAirport(39.58, -94.23);
-      speak('The nearest airport is' + weatherInformation.airport);
+      speak('The nearest airport is' + weatherInformation.airportName);
     }
     if ( x[i] = 'emergency') {
       // @ts-ignore
       const weatherInformation = new EmergencyLandingComponent();
       weatherInformation.getAirportFrequency();
-      speak('The nearest frequency is' + weatherInformation.frequency);
+      speak('The nearest frequency is' + weatherInformation.frequency.toString());
     }
     if ( x[i] = 'information') {
       // @ts-ignore
       const weatherInformation = new AirTrafficAwarenessComponent();
       weatherInformation.getFlightInformation();
-      speak('Your current velocity is' + weatherInformation.velocity
+      speak('Your aircraft code is' + weatherInformation.aircraftId
       + ', your current speed, heading and altitude is' + weatherInformation.velocity.toString()
       + ',' + weatherInformation.heading.toString()
       + ',' + weatherInformation.altitude.toString());
