@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {EmergencyLandingComponent} from '../emergency-landing/emergency-landing.component';
 
 @Component({
   selector: 'app-weather',
@@ -46,4 +47,43 @@ export class WeatherComponent implements OnInit {
   ngOnInit(): void {
     this.getWeatherInformation(39.58, -94.23);
   }
+}
+function parseThroughText(stream: string) {
+  const x = stream.split(' ');
+  for ( let i = 0; i < x.length; i++) {
+    if ( x[i] = 'weather') {
+      // @ts-ignore
+      const weatherInformation = new WeatherComponent();
+      weatherInformation.getWeatherInformation(39.58, -94.23);
+      speak('The current temperature is' + weatherInformation.temperature +
+        ', the wind speed is' + weatherInformation.windSpeed +
+        ', the weather conditions are' + weatherInformation.condition);
+
+    }
+    if ( x[i] = 'airport') {
+      // @ts-ignore
+      const weatherInformation = new EmergencyLandingComponent();
+      weatherInformation.getNearestAirport(39.58, -94.23);
+      speak('The nearest airport is' + weatherInformation.airportName);
+    }
+    if ( x[i] = 'emergency') {
+      // @ts-ignore
+      const weatherInformation = new EmergencyLandingComponent();
+      weatherInformation.getAirportFrequency();
+      speak('The nearest frequency is' + weatherInformation.frequency.toString());
+    }
+    if ( x[i] = 'information') {
+      // @ts-ignore
+      const weatherInformation = new AirTrafficAwarenessComponent();
+      weatherInformation.getFlightInformation();
+      speak('Your aircraft code is' + weatherInformation.aircraftId
+        + ', your current speed, heading and altitude is' + weatherInformation.velocity.toString()
+        + ',' + weatherInformation.heading.toString()
+        + ',' + weatherInformation.altitude.toString());
+    } else {
+      speak('Sorry, i did not understand your request, please rephrase the question?');
+
+    }
+  }
+
 }
