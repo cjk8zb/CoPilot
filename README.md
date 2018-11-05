@@ -5,6 +5,8 @@
 ## Description
 A voice assistant designed specifically for pilots. Ask for weather conditions, ideal takeoff and landing speeds, or recommendations for optimal fuel management. Interfaces with the (closed source, proprietary, and separate) Team 11 Air Traffic Monitor allowing a pilot to ask about nearby aircrafts, and send and receive verbal commands to avoid potential collisions.
 
+Presentation can be found at: https://drive.google.com/file/d/1Ch6xN2-bL9PZoK9Q1Z9Jc5h0jyj_W4mm/view?usp=sharing
+
 ## Features / Requirements
 
  - Voice Recognition
