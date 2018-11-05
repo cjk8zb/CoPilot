@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
 import { EmergencyLandingComponent } from './emergency-landing/emergency-landing.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AirTrafficAwarenessComponent } from './air-traffic-awareness/air-traffic-awareness.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     EmergencyLandingComponent,
+    AirTrafficAwarenessComponent,
   ],
   imports: [
     BrowserModule,
