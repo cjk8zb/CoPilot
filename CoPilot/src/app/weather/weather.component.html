@@ -1,73 +1,66 @@
-<svg viewBox="0 0 800 480" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; margin: 0; padding: 0;">
+<svg viewBox="0 0 800 480" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <rect fill="#434343" x="0" y="0" width="800" height="480"></rect>
   <g transform="translate(400.000000, 0.000000)">
     <polygon id="Info" fill="#00A2FF" points="0 0 400 0 400 480 0 480"></polygon>
-    <text id="city" font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Medium, SF UI Display"
-          font-size="48" font-weight="400" fill="#FFFFFF" x="200" y="48"
-          text-anchor="middle"
-          alignment-baseline="text-before-edge">
+    <text id="city" font-size="48" font-weight="400" fill="#FFFFFF"
+          x="200" y="48" text-anchor="middle" alignment-baseline="text-before-edge">
       {{city}}
     </text>
-    <text id="coordinates" x="200" y="116"
-          font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Regular, SF UI Display" font-size="20"
-          font-weight="normal" fill="#FFFFFF"
-          text-anchor="middle"
-          alignment-baseline="text-before-edge">{{coordinates}}
+    <text id="coordinates" font-size="20" font-weight="normal" fill="#FFFFFF"
+          x="200" y="116" text-anchor="middle" alignment-baseline="text-before-edge">
+      {{coordinates}}
     </text>
-    <text id="temperature" font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Light, SF UI Display"
-          font-size="144" font-weight="300" fill="#FFFFFF"
-          text-anchor="middle"
-          alignment-baseline="middle"
-          x="200" y="280">{{temperature}}&#176;
+    <text id="temperature" font-size="144" font-weight="300" fill="#FFFFFF"
+          x="200" y="280" text-anchor="middle" alignment-baseline="middle">
+      {{temperature}}&#176;
     </text>
-    <text id="condition" font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Regular, SF UI Display"
-          font-size="24" font-weight="normal" fill="#FFFFFF"
-          text-anchor="middle"
-          alignment-baseline="text-before-edge"
-          x="200" y="360">{{condition}}
+    <text id="condition" font-size="24" font-weight="normal" fill="#FFFFFF"
+          x="200" y="360" text-anchor="middle" alignment-baseline="text-before-edge">
+      {{condition}}
     </text>
   </g>
   <g transform="translate(20.000000, 60.000000)">
     <polygon fill="#A9A9A9"
              points="180 40 182.1901 166.1724 223.2624 46.8521 186.3559 167.5259 262.2899 66.7376 189.8995 170.1005 293.2624 97.7101 192.4741 173.6441 313.1479 136.7376 193.8276 177.8099 320 180 193.8276 182.1901 313.1479 223.2624 192.4741 186.3559 293.2624 262.28994 189.8995 189.8995 262.2899 293.26238 186.3559 192.4741 223.2624 313.14791 182.1901 193.8276 180 320 177.8099 193.8276 136.7376 313.14791 173.6441 192.4741 97.71006 293.26238 170.1005 189.8995 66.73762 262.28994 167.5259 186.3559 46.85209 223.2624 166.1724 182.1901 40 180 166.1724 177.8099 46.85209 136.7376 167.5259 173.6441 66.73762 97.7101 170.1005 170.1005 97.71006 66.7376 173.6441 167.5259 136.7376 46.8521 177.8099 166.1724"></polygon>
-    <text font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Regular, SF UI Display"
-          font-size="24" font-weight="normal" fill="#FFFFFF"
-          text-anchor="middle"
-          alignment-baseline="middle"
-          x="180" y="16">N
+    <text
+      font-size="24" font-weight="normal" fill="#FFFFFF"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      x="180" y="16">N
     </text>
-    <text font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Regular, SF UI Display"
-          font-size="24" font-weight="normal" fill="#FFFFFF"
-          text-anchor="middle"
-          alignment-baseline="middle"
-          x="342" y="180">E
+    <text
+      font-size="24" font-weight="normal" fill="#FFFFFF"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      x="342" y="180">E
     </text>
-    <text font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Regular, SF UI Display"
-          font-size="24" font-weight="normal" fill="#FFFFFF"
-          text-anchor="middle"
-          alignment-baseline="middle"
-          x="180" y="342">S
+    <text
+      font-size="24" font-weight="normal" fill="#FFFFFF"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      x="180" y="342">S
     </text>
-    <text font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Regular, SF UI Display"
-          font-size="24" font-weight="normal" fill="#FFFFFF"
-          text-anchor="middle"
-          alignment-baseline="middle"
-          x="16" y="180">W
+    <text
+      font-size="24" font-weight="normal" fill="#FFFFFF"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      x="16" y="180">W
     </text>
-    <g id="windDegree" [attr.transform]="'translate(60.000000, 60.000000) rotate(' + (windDegree || 0)  + ' 120 120)'">
+    <g id="windDegree"
+       [attr.transform]="'translate(60.000000, 60.000000) rotate(' + ((windDegree || 0) - 180)  + ' 120 120)'">
       <circle cx="120" cy="120" r="120" fill="#434343"></circle>
       <polygon fill-opacity="0.5" fill="#00A2FF"
                points="120 0 168 192 72 192"></polygon>
       <polygon fill-opacity="0.25" fill="#00A2FF" points="120 240 168 192 72 192"></polygon>
     </g>
   </g>
-  <text font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Regular, SF UI Display"
-        font-size="24" font-weight="normal" fill="#FFFFFF"
-        text-anchor="middle"
-        alignment-baseline="middle"
-        x="200" y="232">WIND
+  <text
+    font-size="24" font-weight="normal" fill="#FFFFFF"
+    text-anchor="middle"
+    alignment-baseline="middle"
+    x="200" y="232">WIND
   </text>
-  <text id="windSpeed" font-family="-apple-system, BlinkMacSystemFont, SFUIDisplay-Regular, SF UI Display"
+  <text id="windSpeed"
         font-size="24" font-weight="normal" fill="#FFFFFF"
         text-anchor="middle"
         alignment-baseline="middle"

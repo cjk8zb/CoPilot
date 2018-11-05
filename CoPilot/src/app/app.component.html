@@ -1,4 +1,13 @@
-<div style="position: absolute;top:0;left:0;right:0;bottom:0; background-color: rgba(0,0,0,0)">
-<button style="position: absolute;right: 16pt;bottom: 16px; color:white; background-color: blue;border: 2pt solid white;padding: 8pt 16pt; border-radius: 8pt; font-family: -apple-system, BlinkMacSystemFont, SFUIDisplay-Light, SF UI Display;font-size: 1em;">TALK</button>
+<div style="position: absolute;top:0;left:0;right:0;bottom:0;z-index: 100" [class.listening]="voice.isListening">
+  <div [hidden]="!voice.isListening" style="position: absolute;top:0;left:0;right:0;bottom:0;">
+    <svg id="listenSVG" viewBox="0 0 800 480" version="1.1" xmlns="http://www.w3.org/2000/svg"
+         style="">
+      <path id="listenVis" d="" stroke="white" stroke-width="3" fill="transparent"></path>
+    </svg>
+  </div>
+  <button [disabled]="voice.listenButtonDisabled" (click)="voice.listen()"
+          style="position: absolute;right: 16pt;bottom: 16px; color:white; background-color: blue;border: 2pt solid white;padding: 8pt 16pt; border-radius: 8pt; font-family: -apple-system, BlinkMacSystemFont, SFUIDisplay-Light, SF UI Display;font-size: 1em;">
+    {{voice.listenButtonText}}
+  </button>
 </div>
 <router-outlet></router-outlet>

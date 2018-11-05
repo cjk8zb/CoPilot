@@ -1,0 +1,19 @@
+{
+  "speechToText": {
+    "hostname": "stream.watsonplatform.net",
+    "path": "/speech-to-text/api",
+    "username": "ead3c281-68c1-484a-ba44-e760b5e461e2",
+    "password": "LOnbSgEjg1tH"
+  },
+  "textToSpeech": {
+    "hostname": "stream.watsonplatform.net",
+    "path": "/text-to-speech/api",
+    "username": "097df404-28aa-4f96-8cdf-8bf6782a9300",
+    "password": "5KdN42o0h8Kb"
+  },
+  "translate": {
+    "hostname": "gateway.watsonplatform.net",
+    "path": "/language-translator/api/v3/translate?version=2018-05-01",
+    "apikey": "6qc-2zoD9p4qGJHY6n07HExf5kSGUYLV2LQ05zKqvNBP"
+  }
+}
